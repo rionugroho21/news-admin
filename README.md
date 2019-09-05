@@ -16,7 +16,8 @@ In the project directory, you can run:
 #### `npm install`
 
 ## Serve on localhost
-#### `npm start`
+#### `npm run build`
+#### `npm run start`
 
 Runs the app in the development mode.<br>
 The page will reload if you make edits.<br>
