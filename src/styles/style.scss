@@ -1,0 +1,224 @@
+/*****RESET CSS*****/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time, mark, audio,
+video {margin: 0;padding: 0;border: 0;font: inherit;font-size: 100%;vertical-align: baseline;}
+html {line-height: 1;}
+ol, ul {list-style: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+caption, th, td {text-align: left;font-weight: normal;vertical-align: middle;}
+q, blockquote {quotes: none;}
+q:before, q:after, blockquote:before, blockquote:after {content: "";content: none;}
+a img {border: none;}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {display: block;}
+html, body{width: 100%;height: 100%;font-family: 'Lato', sans-serif;}
+*{margin: 0px;padding: 0px;}
+.clearfix:after{content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+/*****RESET CSS*****/
+
+.card-footer .btn.btn-danger{
+    margin-left: 10px;
+}
+
+.card-footer .btn{
+    width: 80px;
+    -webkit-appearance: inherit;
+}
+
+.card img{
+    cursor: pointer;
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0,0,0, 0.8);
+    z-index: 1000000;
+}
+.popup_inner {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    bottom: 25%;
+    margin: auto;
+    background: white;
+}
+.popup_box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.popup_box img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.close{
+    position: absolute;
+    top: -20px;
+    right: -18px;
+    font-size: 34px;
+    line-height: 30px;
+    color: #333;
+    border: 1px solid #656565;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: 1000000;
+    background-color: #d7d7d7 !important;
+}
+
+.form-control-label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.checkbox-inline,
+.radio-inline{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checkbox-inline > input,
+.radio-inline > input{
+    vertical-align: top;
+    margin-top: 2px;
+}
+
+.option-category{
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+}
+
+.mgl10{
+    margin-left: 10px !important;
+}
+.mgl25{
+    margin-left: 25px !important;
+}
+.mgl30{
+    margin-left: 30px !important;
+}
+
+.visit{
+    color: #333;
+}
+
+.errorMsg {
+    color: #cc0000;
+    margin-top: 5px;
+}
+
+.loader{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    font-size: 28pt;
+}
+
+.photo{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.15);
+    margin-bottom: 15px;
+
+    &-img{
+        width: 100%;
+        height: auto;
+
+        img{
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+    &-title{
+        text-align: center;
+        padding: 10px 10px;
+        min-height: 64px;
+        overflow: hidden;
+        height: 72px;
+    }
+}
+
+.search{
+    width: 40%;
+    float: left;
+    margin-bottom: 5px;
+}
+.filter{
+    width: auto;
+    float: left;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.filter label{
+    margin-right: 10px;
+    margin-top: 11px;
+}
+.filter .form-control{
+    width: auto;
+    cursor: pointer;
+}
+
+.form-group {
+    padding: 8px 0px;
+}
+
+.table-wrap{
+    vertical-align: middle !important;
+}
+.table-button{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 5px;
+}
+.table-button .btn{
+    width: 40px;
+    border-radius: 4px;
+}
+
+.pagination-photo{
+    text-align: center;
+    margin: 15px 0px 60px;
+}
+.pagination{
+    margin: 0px auto;
+}
+
+.table .thead-dark th{
+    cursor: pointer;
+}
