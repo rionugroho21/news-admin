@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require("webpack-merge");
 
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 const ROOT_DIR = path.resolve(__dirname, '../')
 const APP_DIR = path.resolve(__dirname, ROOT_DIR + '/src');
 const BUILD_DIR = path.resolve(__dirname, ROOT_DIR + '/public');
@@ -26,7 +28,7 @@ module.exports = env => {
           {
             test: /\.(scss|css)$/i,
             use: [
-              'style-loader',
+              PLATFORM === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
               'css-loader',
               'sass-loader',
             ],

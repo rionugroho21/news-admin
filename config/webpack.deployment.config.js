@@ -2,6 +2,8 @@
 const merge = require('webpack-merge');
 
 // Plugins
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 // Configs
@@ -12,7 +14,11 @@ const prodConfiguration = env => {
     {
       optimization: {
         minimizer: [new UglifyJsPlugin()],
-      }
+      },
+      plugins: [
+        new MiniCssExtractPlugin(),
+        new OptimizeCssAssetsPlugin()
+      ],
     },
   ]);
 }

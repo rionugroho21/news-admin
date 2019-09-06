@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import DatePicker from 'react-datepicker';
-import '../../../node_modules/react-datepicker/dist/react-datepicker.css';
+//import '../../../node_modules/react-datepicker/dist/react-datepicker.css';
+import "react-datepicker/dist/react-datepicker.css";
 
 import {
   startEditingNews,
