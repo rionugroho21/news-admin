@@ -9,20 +9,20 @@ const APP_DIR = path.resolve(__dirname, ROOT_DIR + '/src');
 const BUILD_DIR = path.resolve(__dirname, ROOT_DIR + '/public');
 
 module.exports = env => {
-  const { PLATFORM } = env;
+  const { PLATFORM, VERSION } = env;
   return merge([
     {
       entry: ['@babel/polyfill', APP_DIR + '/App.js'],
       output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, BUILD_DIR),
-        publicPath: '../'
+        publicPath: './'
       },
       module: {
         rules: [
           {
             test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
+            exclude: path.resolve(__dirname, "node_modules"),
             use: ["babel-loader", "eslint-loader"]
           },
           {
@@ -57,10 +57,12 @@ module.exports = env => {
       },
       devServer: {
         contentBase: path.resolve(__dirname, BUILD_DIR),
-        historyApiFallback: true
+        historyApiFallback: true,
+        writeToDisk: true
       },
       plugins: [
         new webpack.DefinePlugin({
+          'process.env.VERSION': JSON.stringify(env.VERSION),
           'process.env.PLATFORM': JSON.stringify(env.PLATFORM)
         })
       ]
