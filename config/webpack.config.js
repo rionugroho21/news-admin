@@ -4,19 +4,17 @@ const merge = require("webpack-merge");
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const ROOT_DIR = path.resolve(__dirname, '../')
-const APP_DIR = path.resolve(__dirname, ROOT_DIR + '/src');
-const BUILD_DIR = path.resolve(__dirname, ROOT_DIR + '/public');
+const ROOT_DIR = path.resolve(__dirname, '../');
+const BUILD_DIR = ROOT_DIR + '/public';
 
 module.exports = env => {
   const { PLATFORM, VERSION } = env;
   return merge([
     {
-      entry: ['@babel/polyfill', APP_DIR + '/App.js'],
+      entry: ['@babel/polyfill', ROOT_DIR + '/src/App.js'],
       output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, BUILD_DIR),
-        publicPath: './'
+        path: BUILD_DIR
       },
       module: {
         rules: [
@@ -56,9 +54,8 @@ module.exports = env => {
         extensions: ['*', '.js', '.jsx']
       },
       devServer: {
-        contentBase: path.resolve(__dirname, BUILD_DIR),
-        historyApiFallback: true,
-        writeToDisk: true
+        contentBase: BUILD_DIR,
+        // historyApiFallback: true
       },
       plugins: [
         new webpack.DefinePlugin({
